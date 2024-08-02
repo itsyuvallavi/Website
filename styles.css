@@ -1,0 +1,531 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "carme", sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+nav{
+    z-index: 99;
+    position: relative;
+}
+
+header h1, 
+.projects h1{
+    font-size: 2.5rem;
+}
+h1, p, a, small{
+    color: #fff;
+
+}
+
+a{transition: 0.3s;}
+
+a:hover{
+    color:#ccc;
+    text-decoration: none;
+}
+
+p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.6;  /* Adjust line height for better readability */
+}
+
+nav a, 
+footer a{
+    text-decoration: none;
+}
+
+nav .container{
+    max-width: 1150px;
+    padding: 1em 2em;
+    margin: auto;
+}
+
+nav .container > div{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    align-items: center;
+}
+
+nav .menu,
+nav .social-media,
+nav .brand{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul,
+footer ul{
+    list-style-type: none;
+    padding: 0;
+    display: inline;
+}
+
+nav ul li,
+footer ul li{
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+nav ul a,
+footer ul a{
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+.logo{
+    width: 2em;
+    display: inline-block;
+}
+
+.nav-btn{
+    background-color:rgba(255, 255, 255, 0.3);
+    color: #fff;
+    width: 2.8em;
+    height: 2.8em;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+    font-size: 1em;
+}
+
+.nav-btn:hover{
+    background-color:rgba(255, 255, 255, 0.6);
+}
+
+nav .container .menu-btn{
+    display: none;
+}
+
+.social-media a{
+    font-size: 1em;
+}
+
+header{
+    height: 100vh;
+    background: 
+        linear-gradient(0deg, rgba(26, 26, 26, 1) 0%, rgba(26, 26, 26, 0.8) 40%),
+        url(./img/dan-otis-OYFHT4X5isg-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.content,
+.projects,
+.overlay,
+.footer-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.content{
+    color: #fff;
+    padding: 0 3em;
+    box-sizing: border-box;
+    height: 90%;
+    max-width: 80%; 
+    margin: 0 auto;
+}
+
+.about-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1fr for image, 2fr for text */
+    gap: 2em;
+    align-items:center;
+    padding: 3em 2em; /* Consistent padding */
+}
+
+.about-row img {
+    width: 100%;
+    min-width: 25em; /* Align with posts photos */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px;
+}
+
+.about-text {
+    max-width: 80%;
+}
+
+.about-text small {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.about-text h1 {
+    margin-bottom: 1em;
+}
+
+.about-text p {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.7; /* Ensure readability */
+    text-align: justify;
+}
+
+
+.projects{
+    position: relative;
+    filter: saturate(0%);
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 1rem;
+}
+
+.projects img{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:space-around;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(26, 26, 26, 1) 0%,
+        rgba(26, 26, 26, 0.8) 40%
+    );
+    width: 100%;
+    height: 100%;
+    z-index: 0%;
+    text-align: center;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(1fr, 1fr);
+    padding: 3em 2em;
+}
+
+.row{
+    display: grid;
+    justify-items: center;
+
+    grid-template-columns: 1fr 1fr;
+    grid-gap:2rem;
+    padding: 3em 2em;
+    margin-top: 0;
+}
+
+.post {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+}
+
+.row div {
+    margin-bottom: 2rem;
+    max-width: 500px; /* Increase the maximum width of the text container */
+}
+
+
+
+.row p {
+    font-size: 1rem; /* Increase the font size if needed */
+    line-height: 1.6; /* Increase line height for better readability */
+    max-width: 100%; /* Ensure the paragraph takes the full width of its container */
+}
+
+.row img{
+    width: 22em;
+    box-shadow: rgba(0, 0, 0, 0.25)0px 14px 28px;
+    box-shadow: rgba(0, 0, 0, 0.25)0px 10px 10px;
+}
+
+footer{
+    background: #161618;
+}
+
+.footer-top{
+    padding: 2em;
+}
+
+.footer-top .logo{
+    width: 5em;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3em 2em;
+}
+
+footer ul li:nth-child(1){
+    margin-top: 1em;
+    margin-left: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    nav .container > div{
+        grid-template-columns: 1fr;
+    }
+
+    nav .menu{
+        flex-direction: column;
+        align-items: flex-start;
+        height: 0;
+        overflow: hidden;
+        transition: 0.7s ease;
+    }
+    nav ul:nth-child(1) li{
+        display: block;
+        margin: 0.5em 0;
+    }
+    nav ul:nth-child(1) li:nth-child(1) {
+        margin-top: 1.5em;
+    }
+    nav ul:nth-child(2) li:nth-child(1) {
+        margin-left: 0;
+    }
+    nav .container .menu-btn{
+        display: inline-block;
+        font-size: 1.4em;
+        cursor: pointer;
+    }
+    nav .container .nav-toggle{
+        height: 10em;
+        overflow: visible;
+    }
+    .posts {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+
+    .post {
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .post img {
+        max-width: 100%; /* Full width image for smaller screens */
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    header{
+        height: 40em;
+    }
+
+}
+
+@media screen and (min-width: 1000px){
+    header .content{
+        margin: 0 0 0 7em;
+        font-size: 18px;
+    }
+    .projects .overlay h1{
+        font-size: 4em;
+    }
+    .row img{
+        width: 30em;
+    }
+    .posts{
+        font-size: 18px;
+        margin: 3em 7em;
+
+    }
+}
+
+
+
+@media screen and (max-width: 680px){
+    .row {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+    .footer-bottom{
+        flex-direction: column;
+        text-align: center;
+    }
+    .row img{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px){
+header, .projects{
+    font-size: 14px;
+}
+}
+
+.posts a{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/*-----------Music Player-------------*/
+
+#music-player {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    max-width: 800px;
+    margin: 2rem auto;
+  }
+  
+  .player-container {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .album-art {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .album-art .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .album-art:hover .overlay {
+    opacity: 1;
+  }
+  
+  .album-art .overlay i {
+    font-size: 3rem;
+    color: #fff;
+  }
+  
+  .track-info {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .track-info h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .track-info p {
+    font-size: 1rem;
+    color: #ccc;
+    margin: 0.5rem 0 0;
+  }
+  
+  .progress-container {
+    margin-bottom: 1rem;
+  }
+  
+  .progress-bar {
+    background: rgba(255, 255, 255, 0.2);
+    height: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  
+  .progress {
+    background: #4CAF50;
+    height: 100%;
+    width: 0;
+    transition: width 0.1s linear;
+  }
+  
+  .time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #ccc;
+  }
+  
+  .control-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .control-buttons button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .control-buttons button:hover {
+    transform: scale(1.2);
+  }
+  
+  .playlist-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .playlist-container h3 {
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  #playlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #playlist li {
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  #playlist li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  #playlist li.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+  }
