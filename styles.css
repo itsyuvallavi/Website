@@ -189,6 +189,7 @@ header {
 
 /* ------------------Project Sliding Show----------------------- */
 
+/* Projects Section */
 .projects {
   position: relative;
   filter: saturate(0%);
@@ -196,7 +197,6 @@ header {
   flex-direction: column;
   gap: 1rem;
   z-index: 1; /* Ensure projects section stays above other elements */
-  margin-top: 2em; /* Add space above projects section */
   overflow: hidden; /* Hide the overflow for the scrolling effect */
 }
 
@@ -215,7 +215,7 @@ header {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: normal;
-  animation-duration: 30s; /* Adjust duration as needed */
+  animation-duration: 60s; /* Adjust duration as needed */
 }
 
 .loop-slider .inner.reverse {
@@ -266,6 +266,10 @@ header {
   transition: background 0.3s ease;
 }
 
+.overlay a:hover {
+  background: #0056b3;
+}
+
 .fade {
   pointer-events: none;
   background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b);
@@ -285,7 +289,7 @@ header {
 .posts {
   display: grid;
   grid-template-columns: repeat(1fr, 1fr);
-  padding: 3em 2em;
+  padding: 3em 0em;
 }
 
 .row {

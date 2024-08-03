@@ -168,5 +168,39 @@
             "artist": "Artist Name"
           }
         ]
+      },
+      {
+        "album": "Worms",
+        "style": "Upbeat, Energetic",
+        "image": "img/albums/worm_logo.png",
+        "tracks": [
+          {
+            "title": "Track 1",
+            "url": "Music/AnotherAlbum/Track1.mp3",
+            "artist": "Artist Name"
+          },
+          {
+            "title": "Track 2",
+            "url": "Music/AnotherAlbum/Track2.mp3",
+            "artist": "Artist Name"
+          }
+        ]
+      },
+      {
+        "album": "Our Brotherly Love",
+        "style": "Upbeat, Energetic",
+        "image": "img/albums/obl_logo.png",
+        "tracks": [
+          {
+            "title": "Track 1",
+            "url": "Music/AnotherAlbum/Track1.mp3",
+            "artist": "Artist Name"
+          },
+          {
+            "title": "Track 2",
+            "url": "Music/AnotherAlbum/Track2.mp3",
+            "artist": "Artist Name"
+          }
+        ]
       }
   ]

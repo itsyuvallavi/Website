@@ -128,3 +128,55 @@ document.addEventListener('DOMContentLoaded', () => {
       audio.play();
   });
 });
+
+
+// Photos Infinite Loop//
+document.addEventListener('DOMContentLoaded', () => {
+    const images = [
+        "./img/Films/Duel_1.png",
+        "./img/Films/Duel_2.png",
+        "./img/Films/Duel_3.png",
+        "./img/Films/EnPaix_2.png",
+        "./img/Films/FamDis_1.png",
+        "./img/Films/FromDust_1.png",
+        "./img/Films/FromDust_2.png",
+        "./img/Films/FromDust_3.png",
+        "./img/Films/FromDust_4.png",
+        "./img/Films/LikeMe_1.png",
+        "./img/Films/Limbo_2.png",
+        "./img/Films/Limbo_3.png",
+        "./img/Films/Limbo.png",
+        "./img/Films/QC_2.png",
+        "./img/Films/QC_3.png"
+    ];
+
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function createImageElements(images, containerId) {
+        const container = document.getElementById(containerId);
+        images.forEach(src => {
+            const img = document.createElement('img');
+            img.classList.add('project');
+            img.src = src;
+            img.alt = src.split('/').pop();
+            container.appendChild(img);
+        });
+    }
+
+    shuffle(images);
+    const midPoint = Math.ceil(images.length / 2);
+    const firstRowImages = images.slice(0, midPoint);
+    const secondRowImages = images.slice(midPoint);
+
+    createImageElements(firstRowImages, 'inner1');
+    createImageElements(secondRowImages, 'inner2');
+
+    // Double the images for smooth looping
+    createImageElements(firstRowImages, 'inner1');
+    createImageElements(secondRowImages, 'inner2');
+});
