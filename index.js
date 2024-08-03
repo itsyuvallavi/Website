@@ -8,109 +8,123 @@ menuBtn.on("click", function() {
 $(".year").html(new Date().getFullYear());
 
 document.addEventListener('DOMContentLoaded', () => {
-    const audio = new Audio();
-    let currentTrackIndex = 0;
-    const tracks = document.querySelectorAll('#playlist li');
-    const playBtn = document.getElementById('play-btn');
-    const pauseBtn = document.getElementById('pause-btn');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const shuffleBtn = document.getElementById('shuffle-btn');
-    const songName = document.getElementById('song-name');
-    const artistName = document.getElementById('artist-name');
-    const currentTimeElem = document.getElementById('current-time');
-    const totalTimeElem = document.getElementById('total-time');
-    const progressBar = document.getElementById('progress');
-    const albumArt = document.getElementById('album-art');
-    const playPauseOverlay = document.getElementById('play-pause-btn');
-  
-    function loadTrack(index) {
+  const albumGallery = document.querySelector('.album-gallery');
+  const playerBar = document.getElementById('playerBar');
+  const audio = new Audio();
+  let currentTrackIndex = 0;
+  let tracks = [];
+
+  // Fetch the JSON data
+  fetch('music.json')
+      .then(response => response.json())
+      .then(data => {
+          // Create album gallery
+          data.forEach((album, index) => {
+              const albumDiv = document.createElement('div');
+              albumDiv.classList.add('post', 'album');
+              albumDiv.setAttribute('data-aos', 'fade-up'); // Add AOS attribute
+              albumDiv.innerHTML = `
+                  <img src="${album.image}" alt="${album.album}">
+                  <div class="album-info">
+                      <h3>${album.album}</h3>
+                      <p>${album.style}</p>
+                  </div>
+              `;
+              albumDiv.addEventListener('click', () => {
+                  loadPlaylist(album.tracks);
+              });
+              albumGallery.appendChild(albumDiv);
+          });
+      });
+
+  // Function to load the playlist
+  function loadPlaylist(tracksData) {
+      tracks = tracksData;
+      updateSongCounter(); // Update song counter
+      loadTrack(0); // Load the first track by default
+      playerBar.classList.remove('hidden');
+  }
+
+  // Function to load a track
+  function loadTrack(index) {
+      currentTrackIndex = index;
       const track = tracks[index];
-      audio.src = track.getAttribute('data-src');
-      songName.textContent = track.textContent;
-      artistName.textContent = track.getAttribute('data-artist');
+      audio.src = track.url;
+      document.getElementById('current-song-name').textContent = track.title;
       audio.load();
       audio.addEventListener('loadedmetadata', () => {
-        totalTimeElem.textContent = formatTime(audio.duration);
+          document.getElementById('total-time').textContent = formatTime(audio.duration);
       });
-      tracks.forEach((t, i) => {
-        t.classList.toggle('active', i === index);
-      });
-    }
-  
-    function updateProgress() {
-      const currentTime = audio.currentTime;
-      const duration = audio.duration;
-      const progressPercent = (currentTime / duration) * 100;
-      progressBar.style.width = `${progressPercent}%`;
-      currentTimeElem.textContent = formatTime(currentTime);
-    }
-  
-    function formatTime(seconds) {
+      audio.play(); // Start playing the track after it is loaded
+      updateSongCounter(); // Update song counter
+  }
+
+  // Function to update the song counter
+  function updateSongCounter() {
+      const songCounter = document.getElementById('song-counter');
+      songCounter.textContent = `${currentTrackIndex + 1} / ${tracks.length}`;
+  }
+
+  // Function to format time in mm:ss
+  function formatTime(seconds) {
       const minutes = Math.floor(seconds / 60);
       const secondsLeft = Math.floor(seconds % 60);
       return `${minutes}:${secondsLeft < 10 ? '0' : ''}${secondsLeft}`;
-    }
-  
-    function togglePlayPause() {
-      if (audio.paused) {
-        audio.play();
-        playBtn.style.display = 'none';
-        pauseBtn.style.display = 'inline-block';
-        playPauseOverlay.classList.replace('fa-play', 'fa-pause');
-      } else {
-        audio.pause();
-        playBtn.style.display = 'inline-block';
-        pauseBtn.style.display = 'none';
-        playPauseOverlay.classList.replace('fa-pause', 'fa-play');
-      }
-    }
-  
-    function playNext() {
+  }
+
+  // Update progress bar and time
+  audio.addEventListener('timeupdate', () => {
+      const progress = (audio.currentTime / audio.duration) * 100;
+      document.getElementById('progress').style.width = `${progress}%`;
+      document.getElementById('current-time').textContent = formatTime(audio.currentTime);
+  });
+
+  // Make the progress bar responsive to clicks
+  document.getElementById('progress-bar').addEventListener('click', (e) => {
+      const progressBar = document.getElementById('progress-bar');
+      const newTime = (e.offsetX / progressBar.offsetWidth) * audio.duration;
+      audio.currentTime = newTime;
+  });
+
+  // Play/Pause functionality
+  document.getElementById('play-btn').addEventListener('click', () => {
+      audio.play();
+      document.getElementById('play-btn').style.display = 'none';
+      document.getElementById('pause-btn').style.display = 'inline-block';
+  });
+
+  document.getElementById('pause-btn').addEventListener('click', () => {
+      audio.pause();
+      document.getElementById('play-btn').style.display = 'inline-block';
+      document.getElementById('pause-btn').style.display = 'none';
+  });
+
+  // Stop functionality
+  document.getElementById('stop-btn').addEventListener('click', () => {
+      audio.pause();
+      audio.currentTime = 0;
+      document.getElementById('play-btn').style.display = 'inline-block';
+      document.getElementById('pause-btn').style.display = 'none';
+  });
+
+  // Close player bar functionality
+  document.getElementById('close-btn').addEventListener('click', () => {
+      audio.pause();
+      playerBar.classList.add('hidden');
+      document.getElementById('play-btn').style.display = 'inline-block';
+      document.getElementById('pause-btn').style.display = 'none';
+  });
+
+  // Next/Previous track functionality
+  document.getElementById('next-btn').addEventListener('click', () => {
       currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
       loadTrack(currentTrackIndex);
       audio.play();
-      togglePlayPause();
-    }
-  
-    function playPrevious() {
+  });
+
+  document.getElementById('prev-btn').addEventListener('click', () => {
       currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
       loadTrack(currentTrackIndex);
       audio.play();
-      togglePlayPause();
-    }
-  
-    loadTrack(currentTrackIndex);
-  
-    playBtn.addEventListener('click', togglePlayPause);
-    pauseBtn.addEventListener('click', togglePlayPause);
-    prevBtn.addEventListener('click', playPrevious);
-    nextBtn.addEventListener('click', playNext);
-    playPauseOverlay.addEventListener('click', togglePlayPause);
-  
-    audio.addEventListener('timeupdate', updateProgress);
-    audio.addEventListener('ended', playNext);
-  
-    tracks.forEach((track, index) => {
-      track.addEventListener('click', () => {
-        currentTrackIndex = index;
-        loadTrack(currentTrackIndex);
-        audio.play();
-        togglePlayPause();
-      });
-    });
-  
-    shuffleBtn.addEventListener('click', () => {
-      shuffleBtn.classList.toggle('active');
-      // Implement shuffle functionality here
-    });
-  
-    // Add click event to progress bar for seeking
-    document.querySelector('.progress-bar').addEventListener('click', function(e) {
-      const progressBarRect = this.getBoundingClientRect();
-      const clickPosition = e.clientX - progressBarRect.left;
-      const clickPercentage = clickPosition / progressBarRect.width;
-      audio.currentTime = clickPercentage * audio.duration;
-      updateProgress();
-    });
   });
+});

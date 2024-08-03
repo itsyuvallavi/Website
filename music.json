@@ -1,0 +1,172 @@
+[
+    {
+      "album": "The Duel",
+      "style": "Sci-Fi, Western, Japanese-style",
+      "image": "img/albums/duel_logo.png",
+      "tracks": [
+        {
+          "title": "En Paix v11",
+          "url": "Music/Ambient/En Paix v11.wav",
+          "artist": "Yuval Lavi"
+        },
+        {
+          "title": "The Fisherman's Wife Burial",
+          "url": "Music/Ambient/The Fisherman's Wife Burial.wav",
+          "artist": "Yuval Lavi"
+        }
+      ]
+    },
+    {
+      "album": "En Paix",
+      "style": "Upbeat, Energetic",
+      "image": "img/albums/en_paix_logo.png",
+      "tracks": [
+        {
+          "title": "Track 1",
+          "url": "Music/AnotherAlbum/Track1.mp3",
+          "artist": "Artist Name"
+        },
+        {
+          "title": "Track 2",
+          "url": "Music/AnotherAlbum/Track2.mp3",
+          "artist": "Artist Name"
+        }
+      ]
+    },
+    {
+      "album": "The Fisherman's Wife",
+      "style": "Upbeat, Energetic",
+      "image": "img/albums/tfw_logo.png",
+      "tracks": [
+        {
+          "title": "Track 1",
+          "url": "Music/AnotherAlbum/Track1.mp3",
+          "artist": "Artist Name"
+        },
+        {
+          "title": "Track 2",
+          "url": "Music/AnotherAlbum/Track2.mp3",
+          "artist": "Artist Name"
+        }
+      ]
+    },
+    {
+      "album": "Quality Control",
+      "style": "Upbeat, Energetic",
+      "image": "img/albums/qc_logo.png",
+      "tracks": [
+        {
+          "title": "Track 1",
+          "url": "Music/AnotherAlbum/Track1.mp3",
+          "artist": "Artist Name"
+        },
+        {
+          "title": "Track 2",
+          "url": "Music/AnotherAlbum/Track2.mp3",
+          "artist": "Artist Name"
+        }
+      ]
+    },
+    {
+        "album": "Zaguri Impreria",
+        "style": "Sci-Fi, Western, Japanese-style",
+        "image": "img/albums/zi_logo.png",
+        "tracks": [
+          {
+            "title": "En Paix v11",
+            "url": "Music/Ambient/En Paix v11.wav",
+            "artist": "Yuval Lavi"
+          },
+          {
+            "title": "The Fisherman's Wife Burial",
+            "url": "Music/Ambient/The Fisherman's Wife Burial.wav",
+            "artist": "Yuval Lavi"
+          }
+        ]
+      },
+      {
+        "album": "Limbo",
+        "style": "Upbeat, Energetic",
+        "image": "img/albums/limbo_logo.png",
+        "tracks": [
+          {
+            "title": "Track 1",
+            "url": "Music/AnotherAlbum/Track1.mp3",
+            "artist": "Artist Name"
+          },
+          {
+            "title": "Track 2",
+            "url": "Music/AnotherAlbum/Track2.mp3",
+            "artist": "Artist Name"
+          }
+        ]
+      },
+      {
+        "album": "From Dust",
+        "style": "Upbeat, Energetic",
+        "image": "img/albums/fd_logo.png",
+        "tracks": [
+          {
+            "title": "Track 1",
+            "url": "Music/AnotherAlbum/Track1.mp3",
+            "artist": "Artist Name"
+          },
+          {
+            "title": "Track 2",
+            "url": "Music/AnotherAlbum/Track2.mp3",
+            "artist": "Artist Name"
+          }
+        ]
+      },
+      {
+        "album": "Backseat Driver",
+        "style": "Upbeat, Energetic",
+        "image": "img/albums/bsd_logo.png",
+        "tracks": [
+          {
+            "title": "Track 1",
+            "url": "Music/AnotherAlbum/Track1.mp3",
+            "artist": "Artist Name"
+          },
+          {
+            "title": "Track 2",
+            "url": "Music/AnotherAlbum/Track2.mp3",
+            "artist": "Artist Name"
+          }
+        ]
+      },
+      {
+        "album": "Last Night",
+        "style": "Upbeat, Energetic",
+        "image": "img/albums/ln_logo.png",
+        "tracks": [
+          {
+            "title": "Track 1",
+            "url": "Music/AnotherAlbum/Track1.mp3",
+            "artist": "Artist Name"
+          },
+          {
+            "title": "Track 2",
+            "url": "Music/AnotherAlbum/Track2.mp3",
+            "artist": "Artist Name"
+          }
+        ]
+      },
+      {
+        "album": "Family Distancing",
+        "style": "Upbeat, Energetic",
+        "image": "img/albums/famd_logo.png",
+        "tracks": [
+          {
+            "title": "Track 1",
+            "url": "Music/AnotherAlbum/Track1.mp3",
+            "artist": "Artist Name"
+          },
+          {
+            "title": "Track 2",
+            "url": "Music/AnotherAlbum/Track2.mp3",
+            "artist": "Artist Name"
+          }
+        ]
+      }
+  ]

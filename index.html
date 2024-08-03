@@ -118,72 +118,36 @@
     </section>
 
     <section class="posts" id="listen">
-        <div class="row">
-            <div class="post">
-                <img src="./img/albums/image1.png" alt="Album Image 1" class="album-cover" />
-                <div>
-                  <h1>Ambient</h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
-                    adipisci mollitia, neque asperiores libero nisi! Eveniet numquam
-                    molestiae magnam doloremque? Et quaerat inventore aliquam magnam
-                    accusamus delectus, distinctio vero enim.
-                  </p>
-                  <div id="music-player">
-                    <div class="player-container">
-                      <div class="album-art">
-                        <img src="./img/albums/image1.png" alt="Album Art" id="album-art">
-                        <div class="overlay">
-                          <i class="fas fa-play" id="play-pause-btn"></i>
-                        </div>
-                      </div>
-                      <div class="player-controls">
-                        <div class="track-info">
-                          <h2 id="song-name">Select a track</h2>
-                          <p id="artist-name"></p>
-                        </div>
-                        <div class="progress-container">
-                          <div class="progress-bar">
-                            <div class="progress" id="progress"></div>
-                          </div>
-                          <div class="time">
-                            <span id="current-time">0:00</span>
-                            <span id="total-time">0:00</span>
-                          </div>
-                        </div>
-                        <div class="control-buttons">
-                          <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
-                          <button id="play-btn"><i class="fas fa-play"></i></button>
-                          <button id="pause-btn" style="display: none;"><i class="fas fa-pause"></i></button>
-                          <button id="next-btn"><i class="fas fa-step-forward"></i></button>
-                          <button id="shuffle-btn"><i class="fas fa-random"></i></button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="playlist-container">
-                      <h3>Playlist</h3>
-                      <ul id="playlist">
-                        <li data-src="Music/Ambient/En Paix v11.wav" data-artist="Yuval Lavi">En Paix v11</li>
-                        <li data-src="Music/Ambient/The Fisherman's Wife Burial.wav" data-artist="Yuval Lavi">The Fisherman's Wife Burial</li>
-                        <li data-src="Music/Ambient/The Fisherman's Wife Credits.wav" data-artist="Yuval Lavi">The Fisherman's Wife Credits</li>
-                        <li data-src="Music/Ambient/The Fisherman's Wife Ending.wav" data-artist="Yuval Lavi">The Fisherman's Wife Ending</li>
-                        <li data-src="Music/Ambient/The Fisherman's Wife Ice.wav" data-artist="Yuval Lavi">The Fisherman's Wife Ice</li>
-                        <li data-src="Music/Ambient/The Fisherman's Wife Intro+Stairs.wav" data-artist="Yuval Lavi">The Fisherman's Wife Intro+Stairs</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-          <!-- You can remove or comment out the other music player instances -->
-          <!-- <div class="post">...</div> -->
-          <!-- <div class="post">...</div> -->
-          <!-- <div class="post">...</div> -->
-          <!-- <div class="post">...</div> -->
-          <!-- <div class="post">...</div> -->
-          
+      <div class="row album-gallery">
+        <!-- Albums will be dynamically inserted here -->
+      </div>
+    </section>
+    
+    <div class="player-bar hidden" id="playerBar">
+      <div class="player-bar-content">
+        <div class="track-info">
+          <h2 id="current-song-name">Select a track</h2>
+          <span id="song-counter" class="song-counter">0 / 0</span>
         </div>
-      </section>
+        <div class="controls">
+          <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
+          <button id="play-btn"><i class="fas fa-play"></i></button>
+          <button id="pause-btn" style="display: none;"><i class="fas fa-pause"></i></button>
+          <button id="stop-btn"><i class="fas fa-stop"></i></button>
+          <button id="next-btn"><i class="fas fa-step-forward"></i></button>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar">
+            <div class="progress" id="progress"></div>
+          </div>
+          <div class="time">
+            <span id="current-time">0:00</span>
+            <span id="total-time">0:00</span>
+          </div>
+        </div>
+        <button id="close-btn" class="close-btn"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
 
     <footer>
       <div class="footer-top">
@@ -216,5 +180,10 @@
     </footer>
 
     <script src="index.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200, // duration of the animation
+      });
+    </script>
   </body>
 </html>
