@@ -297,7 +297,7 @@ header {
   justify-items: center;
   /*grid-template-columns: 1fr 1fr;*/
   grid-gap: 2rem;
-  padding: 3em 2em;
+  /* padding: 3em 2em; */
   margin-top: 0;
 }
 
@@ -493,8 +493,8 @@ footer ul li:nth-child(1) {
 
 .post.album {
   position: relative;
-  width: 400px;
-  height: 250px;
+  width: 300px;
+  height: 200px;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
