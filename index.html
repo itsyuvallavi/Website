@@ -5,11 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yuval Lavi</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js/dist/plugins/hover.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1cb5eca473.js"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
+    <script type="module">
+      import WaveSurfer from "https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js";
+
+      const wavesurfer = WaveSurfer.create({
+        container: "#waveform",
+        waveColor: "#4F4A85",
+        progressColor: "#383351",
+        url: "/audio.mp3",
+      });
+
+      wavesurfer.on("interaction", () => {
+        wavesurfer.play();
+      });
+    </script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
@@ -19,6 +39,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <header id="home">
       <nav>
@@ -116,7 +137,23 @@
         <!-- Albums will be dynamically inserted here -->
       </div>
     </section>
-    
+    <!-- -----CUSTOM SHAPE----- -->
+    <section class="shape">
+      <div class="custom-shape-divider-bottom-1722766256">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
     <div class="player-bar hidden" id="playerBar">
       <div class="player-bar-content">
         <div class="track-info">
@@ -126,7 +163,9 @@
         <div class="controls">
           <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
           <button id="play-btn"><i class="fas fa-play"></i></button>
-          <button id="pause-btn" style="display: none;"><i class="fas fa-pause"></i></button>
+          <button id="pause-btn" style="display: none">
+            <i class="fas fa-pause"></i>
+          </button>
           <button id="stop-btn"><i class="fas fa-stop"></i></button>
           <button id="next-btn"><i class="fas fa-step-forward"></i></button>
         </div>
@@ -139,9 +178,65 @@
             <span id="total-time">0:00</span>
           </div>
         </div>
-        <button id="close-btn" class="close-btn"><i class="fas fa-times"></i></button>
+        <button id="close-btn" class="close-btn">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
     </div>
+
+    <section class="plug-in">
+      <div class="container-plug-in">
+        <p>Plug-in</p>
+        <div class="plug-in-img">
+          <img
+            src="./img/plug-in/Screen Shot 2022-05-19 at 4.03.51 PM.png"
+            alt="Plug-in Image"
+          />
+        </div>
+      </div>
+      <div class="container-row">
+        <div class="container-plug-in demo">
+          <div class="container-waveform">
+            <p>Demo</p>
+            <div id="waveform">
+              <!-- the waveform will be rendered here -->
+            </div>
+            <!-- ------Buttons------- -->
+            <div class="buttons">
+              <span class="play-btn btn">
+                <i class="fa-solid fa-play"></i>
+                <i class="fa-solid fa-pause"></i>
+              </span>
+
+              <span class="stop-btn btn">
+                <i class="fa-solid fa-stop"></i>
+              </span>
+
+              <span class="mute-btn btn">
+                <i class="fa-solid fa-volume-up"></i>
+                <i class="fa-solid fa-volume-mute"></i>
+              </span>
+
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.1"
+                value="0.5"
+                class="volume-slider"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="container-plug-in sale">
+          <p>Sale</p>
+          <h3>129$</h3>
+          <h2>99$</h2>
+          <button>Add To Cart</button>
+          <small>Limied Time Intro Price</small>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <div class="footer-top">

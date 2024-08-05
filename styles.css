@@ -661,3 +661,122 @@ footer ul li:nth-child(1) {
   font-size: 0.8rem;
   color: #ccc;
 }
+
+
+/*--------------------Custom Shape---------------------*/
+
+.shape{
+  padding-top: 10rem;
+  position: relative;
+}
+.custom-shape-divider-bottom-1722766256 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1722766256 svg {
+  position: relative;
+  display: block;
+  width: calc(121% + 1.3px);
+  height: 145px;
+}
+
+.custom-shape-divider-bottom-1722766256 .shape-fill {
+  fill: #CCCCCC;
+}
+/*--------------------Kontakt---------------------*/
+.plug-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+  background: #ccc;
+  color: #1a1a1a;
+  gap:2em;
+}
+
+.container-plug-in {
+  position: relative;
+  margin: 0;
+  padding: 70px 70px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.container-row .demo,
+.container-row .sale{
+  width: 19em;
+  height: 20em;
+}
+.plug-in p {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  margin: 0; /* Remove default margin */
+  padding: 10px; /* Add padding if needed */
+  z-index: 10; /* Ensure it stays on top */
+  color: #ff6347;
+  font-family: "carme";
+  font-size: 1em;
+}
+
+.plug-in-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Container shadow */
+  border: 5px solid transparent; /* Initial border setting */
+  transition: border-width 0.6s linear, border-color 0.6s linear, opacity 0.6s;
+}
+
+.plug-in-img img {
+  height: 350px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 20px 40px rgba(0, 0, 0, 0.2), 0 25px 50px rgba(0, 0, 0, 0.1); /* More prominent image shadow */
+}
+
+/* -------------WAVE FORM------------------------- */
+
+#waveform {
+  width: 100%;
+}
+
+.buttons .btn{
+  padding: 14px;
+  width: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.buttons .play-btn .fa-pause{
+  display: none;
+}
+
+.buttons .mute-btn .fa-volume-mute{
+  display: none;
+}
+
+.sale{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sale h3{
+  text-decoration-line:line-through;
+  margin:0;
+}
