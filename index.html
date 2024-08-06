@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/wavesurfer.js"></script>
     <script src="https://unpkg.com/wavesurfer.js/dist/plugins/hover.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="client.js" defer></script>
     <script
       src="https://kit.fontawesome.com/1cb5eca473.js"
       crossorigin="anonymous"
@@ -16,20 +17,7 @@
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module">
-      import WaveSurfer from "https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js";
 
-      const wavesurfer = WaveSurfer.create({
-        container: "#waveform",
-        waveColor: "#4F4A85",
-        progressColor: "#383351",
-        url: "/audio.mp3",
-      });
-
-      wavesurfer.on("interaction", () => {
-        wavesurfer.play();
-      });
-    </script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
@@ -118,19 +106,6 @@
         </div>
       </div>
     </header>
-
-    <!-- <section class="projects" id="projects">
-      <div class="overlay">
-          <div>
-
-          </div>
-      </div>
-      <div class="loop-slider">
-          <div class="inner" id="inner1"></div>
-          <div class="inner reverse" id="inner2"></div>
-      </div>
-      <div class="fade"></div>
-  </section> -->
 
     <section class="posts" id="listen">
       <div class="row album-gallery">
@@ -268,7 +243,6 @@
       </div>
     </footer>
 
-    <script src="index.js"></script>
     <script>
       AOS.init({
         duration: 1200, // duration of the animation

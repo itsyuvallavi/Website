@@ -1,5 +1,17 @@
 {
+  "name": "website_v2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type":"module",
   "dependencies": {
+    "express": "^4.19.2",
     "wavesurfer.js": "^7.8.2"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
